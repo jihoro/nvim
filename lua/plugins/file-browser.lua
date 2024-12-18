@@ -9,7 +9,7 @@ return {
   --     desc = "Browser Files",
   --   },
   -- },
-  config = function()
-    vim.keymap.set("n", "<leader>pf", ":Telescope file_browser path=%:p:h select_buffer=true<CR>")
-  end,
+  -- config = function()
+  --   vim.keymap.set("n", "<leader>pf", ":Telescope file_browser path=%:p:h=%:p:h<cr>")
+  -- end,
 }
