@@ -26,6 +26,6 @@ return {
         light = "dragon",
       },
     })
-    vim.cmd("colorscheme kanagawa")
+    -- vim.cmd("colorscheme kanagawa")
   end,
 }
