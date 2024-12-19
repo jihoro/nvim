@@ -5,3 +5,6 @@ vim.opt.termguicolors = true
 -- vim.cmd("colorscheme nord")
 --
 -- require("nord").set()
+
+vim.opt.list = false
+vim.g.ai_cmp = false
