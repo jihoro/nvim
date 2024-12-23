@@ -1,8 +1,7 @@
 return {
-  'shaunsingh/nord.nvim',
-  
-  enabled = false,
-  config = function()
-    vim.cmd("colorscheme nord")
-  end
+    'shaunsingh/nord.nvim',
+    config = function()
+        vim.g.nord_disable_background = true
+        vim.cmd("colorscheme nord")
+    end
 }

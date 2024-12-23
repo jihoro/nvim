@@ -1,5 +1,4 @@
 require("config.lazy")
-
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
@@ -16,9 +15,9 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 vim.api.nvim_create_autocmd('LspAttach', {
-    callback = function(e)
-        local opts = { buffer = e.buf }
-        vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
-    end
+	callback = function(e)
+		local opts = { buffer = e.buf }
+		vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
+	end
 })
 vim.opt.wrap = false
