@@ -53,7 +53,11 @@ return {
     {
         "crispgm/nvim-go",
         config = function()
-            require('go').setup({})
+            require('go').setup({
+                auto_lint = false,
+                linter = 'golangci-lint',
+                formatter = 'gofumpt'
+            })
             vim.keymap.set("n", "<leader>ie", "<cmd>GoIfErr<CR>")
         end
     },
