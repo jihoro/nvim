@@ -21,3 +21,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end
 })
 vim.opt.wrap = false
+vim.o.ignorecase = true
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
+
+vim.opt.termguicolors = true

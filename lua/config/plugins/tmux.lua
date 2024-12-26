@@ -1,17 +1,28 @@
 return {
     "christoomey/vim-tmux-navigator",
-    cmd = {
-        "TmuxNavigateLeft",
-        "TmuxNavigateDown",
-        "TmuxNavigateUp",
-        "TmuxNavigateRight",
-        "TmuxNavigatePrevious",
+    opts = {
+        disable_keybindings = true, -- Disable default keybindings
     },
-    keys = {
-        { "<c-h>",  "<cmd><C-U>TmuxNavigateLeft<cr>" },
-        { "<c-j>",  "<cmd><C-U>TmuxNavigateDown<cr>" },
-        { "<c-k>",  "<cmd><C-U>TmuxNavigateUp<cr>" },
-        { "<c-l>",  "<cmd><C-U>TmuxNavigateRight<cr>" },
-        { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
-    },
+    config = function()
+        -- Manually re-enable desired keybindings except for <C-\>
+        vim.g.tmux_navigator_no_mappings = 1
+
+        vim.keymap.set("n", "<C-h>", "<cmd>TmuxNavigateLeft<CR>")
+        vim.keymap.set("n", "<C-j>", "<cmd>TmuxNavigateDown<CR>")
+        vim.keymap.set("n", "<C-k>", "<cmd>TmuxNavigateUp<CR>")
+        vim.keymap.set("n", "<C-l>", "<cmd>TmuxNavigateRight<CR>")
+    end,
+    -- cmd = {
+    --     "TmuxNavigateLeft",
+    --     "TmuxNavigateDown",
+    --     "TmuxNavigateUp",
+    --     "TmuxNavigateRight",
+    -- },
+    -- keys = {
+    --     { "<c-h>", "<cmd>TmuxNavigateLeft<cr>" },
+    --     { "<c-j>", "<cmd>TmuxNavigateDown<cr>" },
+    --     { "<c-k>", "<cmd>TmuxNavigateUp<cr>" },
+    --     { "<c-l>", "<cmd>TmuxNavigateRight<cr>" },
+    --     { ""
+    -- },
 }
