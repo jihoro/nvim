@@ -9,8 +9,12 @@ vim.wo.relativenumber = true
 vim.opt.clipboard = 'unnamedplus'
 
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
+-- vim.api.nvim_set_keymap('n', '<C-d>',
+--     '<Cmd>lua vim.cmd("normal! <C-d>"); MiniAnimate.execute_after("scroll", "normal! zz")<CR>',
+--     { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<C-u>',
+--     '<Cmd>lua vim.cmd("normal! <C-u>"); MiniAnimate.execute_after("scroll", "normal! zz")<CR>',
+--     { noremap = true, silent = true })
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
