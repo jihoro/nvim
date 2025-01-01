@@ -23,6 +23,7 @@ return {
             require 'lspconfig'.helm_ls.setup { capabilities = capabilities }
             require 'lspconfig'.yamlls.setup { capabilities = capabilities }
             require 'lspconfig'.terraformls.setup { capabilities = capabilities }
+            require 'lspconfig'.yls.setup { capabilities = capabilities }
 
             vim.api.nvim_create_autocmd('LspAttach', {
                 callback = function(args)
@@ -54,7 +55,7 @@ return {
         "crispgm/nvim-go",
         config = function()
             require('go').setup({
-                auto_lint = false,
+                auto_lint = true,
                 linter = 'golangci-lint',
                 formatter = 'gofumpt'
             })

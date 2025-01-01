@@ -6,11 +6,12 @@ return {
         config = function()
             require("copilot").setup({
                 suggestion = {
-                    enabled = false,
+                    enabled = true,
                     auto_trigger = true,
-                    -- keymap = {
-                    --     accept = "<tab>",
-                    -- },
+                    hide_during_completion = true,
+                    keymap = {
+                        accept = "<leader><Tab>",
+                    },
                 },
                 panel = { enabled = false },
             })
