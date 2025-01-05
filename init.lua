@@ -11,8 +11,10 @@ vim.opt.clipboard = 'unnamedplus'
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("x", "<leader>p", [["_dP]])
+
+vim.keymap.set("n", "<C-d>", "<Cmd>normal! <C-d>zz<CR>", { silent = true })
+vim.keymap.set("n", "<C-u>", "<Cmd>normal! <C-u>zz<CR>", { silent = true })
 
 vim.api.nvim_create_autocmd('LspAttach', {
     callback = function(e)
@@ -27,4 +29,3 @@ vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
 vim.g.tmux_navigator_no_mappings = 1
-vim.keymap.set("x", "<leader>p", [["_dP]])
