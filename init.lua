@@ -16,6 +16,9 @@ vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set("n", "<C-d>", "<Cmd>normal! <C-d>zz<CR>", { silent = true })
 vim.keymap.set("n", "<C-u>", "<Cmd>normal! <C-u>zz<CR>", { silent = true })
 
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
 vim.api.nvim_create_autocmd('LspAttach', {
     callback = function(e)
         local opts = { buffer = e.buf }
