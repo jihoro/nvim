@@ -57,7 +57,8 @@ return {
             require('go').setup({
                 auto_lint = false,
                 linter = 'golangci-lint',
-                formatter = 'gofumpt'
+                formatter = 'gofumpt',
+                tags_options = {},
             })
             vim.keymap.set("n", "<leader>ie", "<cmd>GoIfErr<CR>")
         end
