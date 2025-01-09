@@ -14,6 +14,34 @@ return {
                 },
                 live_grep = {
                     theme = "dropdown",
+                    entry_maker = function(entry)
+                        local filename, lnum, col, text = string.match(entry, "([^:]+):(%d+):(%d+):(.*)")
+                        return {
+                            value = entry,
+                            ordinal = filename .. " " .. text,
+                            display = filename .. ":" .. lnum, -- Only show filename and line number
+                            filename = filename,
+                            lnum = tonumber(lnum),
+                            col = tonumber(col),
+                            text = text,
+                        }
+                    end,
+                },
+                lsp_references = {
+                    theme = "dropdown",
+                    entry_maker = function(entry)
+                        local filename = entry.filename or entry.uri
+                        local lnum = entry.lnum
+                        return {
+                            value = entry,
+                            ordinal = filename .. " " .. (entry.text or ""), -- Use filename + text for filtering
+                            display = filename .. ":" .. lnum, -- Only show filename and line number
+                            filename = filename,
+                            lnum = lnum,
+                            col = entry.col or 1, -- Optional: You can include column if necessary
+                            text = entry.text, -- Reference text (optional)
+                        }
+                    end,
                 },
             },
         }
