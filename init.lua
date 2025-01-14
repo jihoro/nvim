@@ -33,3 +33,4 @@ vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
 vim.g.tmux_navigator_no_mappings = 1
+vim.o.guicursor = ""
