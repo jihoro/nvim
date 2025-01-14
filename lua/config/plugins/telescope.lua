@@ -10,10 +10,10 @@ return {
         require('telescope').setup {
             pickers = {
                 find_files = {
-                    theme = "dropdown",
+                    -- theme = "dropdown",
                 },
                 live_grep = {
-                    theme = "dropdown",
+                    -- theme = "dropdown",
                     entry_maker = function(entry)
                         local filename, lnum, col, text = string.match(entry, "([^:]+):(%d+):(%d+):(.*)")
                         return {
@@ -28,18 +28,18 @@ return {
                     end,
                 },
                 lsp_references = {
-                    theme = "dropdown",
+                    -- theme = "dropdown",
                     entry_maker = function(entry)
                         local filename = entry.filename or entry.uri
                         local lnum = entry.lnum
                         return {
                             value = entry,
                             ordinal = filename .. " " .. (entry.text or ""), -- Use filename + text for filtering
-                            display = filename .. ":" .. lnum, -- Only show filename and line number
+                            display = filename .. ":" .. lnum,               -- Only show filename and line number
                             filename = filename,
                             lnum = lnum,
                             col = entry.col or 1, -- Optional: You can include column if necessary
-                            text = entry.text, -- Reference text (optional)
+                            text = entry.text,    -- Reference text (optional)
                         }
                     end,
                 },
