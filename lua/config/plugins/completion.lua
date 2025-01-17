@@ -86,7 +86,7 @@ return {
         --         },
         --     },
         -- },
-        signature = { enabled = true },
+        signature = { enabled = false },
         completion = {
             documentation = {
                 auto_show = true,
