@@ -31,6 +31,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
     end
 })
+
+vim.diagnostic.config({ virtual_text = true })
+
 vim.opt.wrap = false
 vim.o.ignorecase = true
 vim.opt.hlsearch = false
