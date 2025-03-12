@@ -23,6 +23,8 @@ end, { noremap = true, silent = true })
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("x", "<leader>p", [["_dP]])
+vim.keymap.set("n", "<C-n>", "<cmd>cnext<CR>")
+vim.keymap.set("n", "<C-p>", "<cmd>cprev<CR>")
 
 vim.api.nvim_create_autocmd('LspAttach', {
     callback = function(e)
