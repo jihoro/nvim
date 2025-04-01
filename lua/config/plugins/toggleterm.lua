@@ -7,6 +7,7 @@ return {
                 open_mapping = [[<C-\>]],
                 direction = 'horizontal',
                 size = 20,
+                auto_scroll = false,
                 float_opts = {
                     border = 'rounded',
                 }
