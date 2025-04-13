@@ -55,6 +55,7 @@ return {
         "crispgm/nvim-go",
         config = function()
             require('go').setup({
+                auto_format = false,
                 auto_lint = false,
                 linter = 'golangci-lint',
                 formatter = 'gofumpt',

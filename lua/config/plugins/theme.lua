@@ -4,16 +4,11 @@ return {
         config = function()
             vim.cmd("colorscheme base16-black-metal")
             vim.cmd [[
-            highlight Normal guibg=NONE ctermbg=NONE
-            highlight NormalNC guibg=NONE ctermbg=NONE
+                highlight Normal guibg=NONE ctermbg=NONE
+                highlight NormalNC guibg=NONE ctermbg=NONE
+                highlight StatusLine guibg=NONE
+                highlight StatusLineNC guibg=NONE guifg=NONE
             ]]
         end
-    }
-    -- {
-    -- 'shaunsingh/nord.nvim',
-    -- config = function()
-    --     vim.g.nord_disable_background = true
-    --     vim.cmd("colorscheme nord")
-    -- end
-    -- }
+    },
 }
