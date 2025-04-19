@@ -99,5 +99,6 @@ return {
                 prefetch_on_insert = true,
             },
         },
+        signature = { enabled = true },
     },
 }

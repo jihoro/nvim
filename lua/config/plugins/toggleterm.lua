@@ -10,7 +10,8 @@ return {
                 auto_scroll = false,
                 float_opts = {
                     border = 'rounded',
-                }
+                },
+                shade_terminals = false,
             })
             function _G.set_terminal_keymaps()
                 local opts = { buffer = 0 }
