@@ -39,6 +39,7 @@ return {
                 -- \ base0C = '#aaaaaa', base0D = '#888888', base0E = '#999999', base0F = '#444444'
                 -- \})
 
+                -- kali blue #0080fe
 
                 palette = {
                     base00 = "#000000", -- Background
@@ -49,10 +50,10 @@ return {
                     base05 = "#E4F0FB", -- Default text
                     base06 = "#7390AA",
                     base07 = "#E4F0FB", -- Light foreground
-                    base08 = "#D0679D", -- Red
+                    base08 = "#fe0100", -- Red
                     base09 = "#7390AA", -- Orange
-                    base0A = "#5fb3a1", -- Yellow
-                    base0B = "#5DE4C7", -- Green
+                    base0A = "#00B0EA", -- Yellow
+                    base0B = "#29c1aa", -- Green
                     base0C = "#E4F0FB", -- Cyan
                     base0D = "#E4F0FB", -- Blue
                     base0E = "#7390AA", -- Purple
