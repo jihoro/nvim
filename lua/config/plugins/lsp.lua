@@ -49,6 +49,13 @@ return {
                     end
                 end,
             })
+            vim.lsp.util.open_floating_preview = (function(original)
+                return function(contents, syntax, opts, ...)
+                    opts = opts or {}
+                    opts.border = opts.border or "rounded"
+                    return original(contents, syntax, opts, ...)
+                end
+            end)(vim.lsp.util.open_floating_preview)
         end,
     },
     {

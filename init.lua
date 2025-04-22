@@ -35,7 +35,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 -- enable virtual / ghost text
-vim.diagnostic.config({ virtual_text = true })
+vim.diagnostic.config({
+    virtual_text = true,
+    float = { border = "rounded" }
+})
 
 vim.opt.wrap = false
 vim.o.ignorecase = true
