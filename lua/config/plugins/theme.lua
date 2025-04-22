@@ -1,4 +1,23 @@
 return {
+    -- Lua
+
+    -- {
+    --     'olivercederborg/poimandres.nvim',
+    --     lazy = false,
+    --     priority = 1000,
+    --     config = function()
+    --         require('poimandres').setup {
+    --             -- leave this setup function empty for default config
+    --             -- or refer to the configuration section
+    --             -- for configuration options
+    --         }
+    --     end,
+    --
+    --     -- optionally set the colorscheme within lazy config
+    --     init = function()
+    --         vim.cmd("colorscheme poimandres")
+    --     end
+    -- }
     {
         "echasnovski/mini.base16",
         version = false,
@@ -44,6 +63,22 @@ return {
                 -- 29c1aa
 
                 palette = {
+                    -- base00 = "#000000", -- Background
+                    -- base01 = "#000000",
+                    -- base02 = "#303340",
+                    -- base03 = "#506477",
+                    -- base04 = "#7390AA",
+                    -- base05 = "#E4F0FB", -- Default text
+                    -- base06 = "#7390AA",
+                    -- base07 = "#E4F0FB", -- Light foreground
+                    -- base08 = "#91B4D5", -- Red
+                    -- base09 = "#7390AA", -- Orange
+                    -- base0A = "#29c1aa", -- Yellow
+                    -- base0B = "#29c1aa", -- Green
+                    -- base0C = "#E4F0FB", -- Cyan
+                    -- base0D = "#91B4D5", -- Blue
+                    -- base0E = "#7390AA", -- Purple
+                    -- base0F = "#506477", -- Brown/Extra
                     base00 = "#000000", -- Background
                     base01 = "#000000",
                     base02 = "#303340",
@@ -52,12 +87,12 @@ return {
                     base05 = "#E4F0FB", -- Default text
                     base06 = "#7390AA",
                     base07 = "#E4F0FB", -- Light foreground
-                    base08 = "#e67e80", -- Red
+                    base08 = "#91B4D5", -- Red
                     base09 = "#7390AA", -- Orange
-                    base0A = "#29c1aa", -- Yellow
-                    base0B = "#29c1aa", -- Green
-                    base0C = "#E4F0FB", -- Cyan
-                    base0D = "#91B4D5", -- Blue
+                    base0A = "#91B4D5", -- Yellow
+                    base0B = "#5DE4C7", -- Green
+                    base0C = "#91B4D5", -- Cyan
+                    base0D = "#29c1aa", -- Blue
                     base0E = "#7390AA", -- Purple
                     base0F = "#506477", -- Brown/Extra
                 },
