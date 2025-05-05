@@ -21,6 +21,7 @@ return {
     {
         "echasnovski/mini.base16",
         version = false,
+        priority = 1000,
         config = function()
             require('mini.base16').setup({
                 -- palette = {
@@ -63,8 +64,8 @@ return {
                 -- 29c1aa
 
                 palette = {
-                    -- base00 = "#000000", -- Background
-                    -- base01 = "#000000",
+                    -- base00 = "#307040", -- Background
+                    -- base01 = "#307040",
                     -- base02 = "#303340",
                     -- base03 = "#506477",
                     -- base04 = "#7390AA",
@@ -98,15 +99,15 @@ return {
                 },
                 use_cterm = true,       -- Optional: enable for better terminal color support
             })
+            --     highlight Normal guibg=NONE ctermbg=NONE
+            --     highlight NormalNC guibg=NONE ctermbg=NONE
+            --     highlight LineNr guibg=NONE ctermbg=NONE
+            --     highlight CursorLineNr guibg=NONE ctermbg=NONE
+            --     highlight SignColumn guibg=NONE ctermbg=NONE
+            --     highlight FoldColumn guibg=NONE ctermbg=NONE
             vim.cmd [[
-                highlight Normal guibg=NONE ctermbg=NONE
-                highlight NormalNC guibg=NONE ctermbg=NONE
                 highlight StatusLine guibg=NONE
-                highlight StatusLineNC guibg=NONE guifg=NONE
-                highlight LineNr guibg=NONE ctermbg=NONE
-                highlight CursorLineNr guibg=NONE ctermbg=NONE
-                highlight SignColumn guibg=NONE ctermbg=NONE
-                highlight FoldColumn guibg=NONE ctermbg=NONE
+                highlight StatusLineNC guibg=NONE
             ]]
         end,
 

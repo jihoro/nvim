@@ -17,18 +17,41 @@ return {
         },
         config = function()
             local capabilities = require('blink.cmp').get_lsp_capabilities()
-            require("lspconfig").lua_ls.setup { capabilties = capabilities }
-            require 'lspconfig'.gopls.setup { capabilities = capabilities }
-            -- require 'lspconfig'.ts_ls.setup { capabilities = capabilities }
-            require 'lspconfig'.helm_ls.setup { capabilities = capabilities }
-            require 'lspconfig'.yamlls.setup { capabilities = capabilities }
-            require 'lspconfig'.terraformls.setup { capabilities = capabilities }
-            require 'lspconfig'.yls.setup { capabilities = capabilities }
+
+            -- New Neovim 0.11+ LSP config
+            vim.lsp.config('lua_ls', {
+                capabilities = capabilities
+            })
+
+            vim.lsp.config('gopls', {
+                capabilities = capabilities
+            })
+
+            -- vim.lsp.config('tsserver', {
+            --   capabilities = capabilities
+            -- })
+
+            vim.lsp.config('helm_ls', {
+                capabilities = capabilities
+            })
+
+            vim.lsp.config('yamlls', {
+                capabilities = capabilities
+            })
+
+            vim.lsp.config('terraformls', {
+                capabilities = capabilities
+            })
+
+            vim.lsp.config('yls', {
+                capabilities = capabilities
+            })
 
             vim.api.nvim_create_autocmd('LspAttach', {
                 callback = function(args)
                     local client = vim.lsp.get_client_by_id(args.data.client_id)
                     if not client then return end
+
                     -- if client:supports_method('textDocument/implementation', 0) then
                     --   -- Create a keymap for vim.lsp.buf.implementation
                     -- end
@@ -49,6 +72,7 @@ return {
                     end
                 end,
             })
+
             vim.lsp.util.open_floating_preview = (function(original)
                 return function(contents, syntax, opts, ...)
                     opts = opts or {}

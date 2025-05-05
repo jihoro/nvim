@@ -8,6 +8,7 @@ vim.wo.number = true
 vim.wo.relativenumber = true
 vim.opt.clipboard = 'unnamedplus'
 
+-- keymaps
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
@@ -49,6 +50,7 @@ vim.opt.termguicolors = true
 vim.g.tmux_navigator_no_mappings = 1
 vim.o.guicursor = ""
 
+-- fold settings
 vim.o.foldenable = true
 vim.o.foldlevel = 99
 vim.o.foldmethod = "expr"
