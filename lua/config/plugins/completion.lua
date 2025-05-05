@@ -86,7 +86,6 @@ return {
         --         },
         --     },
         -- },
-        signature = { enabled = false },
         completion = {
             menu = {
                 border = "rounded"
@@ -105,6 +104,11 @@ return {
                 prefetch_on_insert = true,
             },
         },
-        signature = { enabled = true },
+        signature = {
+            enabled = true,
+            window = {
+                border = "rounded"
+            },
+        },
     },
 }
