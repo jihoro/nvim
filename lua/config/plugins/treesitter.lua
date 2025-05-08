@@ -27,6 +27,25 @@ return {
         end,
     },
     {
+        "nvim-treesitter/nvim-treesitter-textobjects",
+        dependencies = { "nvim-treesitter/nvim-treesitter" },
+        config = function()
+            require 'nvim-treesitter.configs'.setup {
+                textobjects = {
+                    select = {
+                        enable = true,
+                        lookahead = true,
+                        keymaps = {
+                            ["ar"] = "@parameter.outer", -- around parameter
+                            ["ir"] = "@parameter.inner", -- inside parameter
+                        },
+                        include_surrounding_whitespace = true,
+                    },
+                },
+            }
+        end
+    },
+    {
         "nvim-treesitter/nvim-treesitter-context",
         dependencies = { "nvim-treesitter/nvim-treesitter" },
         config = function()

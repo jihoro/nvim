@@ -19,10 +19,12 @@ return {
             local capabilities = require('blink.cmp').get_lsp_capabilities()
 
             -- New Neovim 0.11+ LSP config
+            vim.lsp.enable('lua_ls')
             vim.lsp.config('lua_ls', {
                 capabilities = capabilities
             })
 
+            vim.lsp.enable('gopls')
             vim.lsp.config('gopls', {
                 capabilities = capabilities
             })
@@ -31,18 +33,22 @@ return {
             --   capabilities = capabilities
             -- })
 
+            vim.lsp.enable('helm_ls')
             vim.lsp.config('helm_ls', {
                 capabilities = capabilities
             })
 
+            vim.lsp.enable('yamlls')
             vim.lsp.config('yamlls', {
                 capabilities = capabilities
             })
 
+            vim.lsp.enable('terraformls')
             vim.lsp.config('terraformls', {
                 capabilities = capabilities
             })
 
+            vim.lsp.enable('yls')
             vim.lsp.config('yls', {
                 capabilities = capabilities
             })
