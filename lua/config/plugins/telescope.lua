@@ -53,5 +53,16 @@ return {
         vim.keymap.set("n", "<leader>fh", builtin.help_tags)
         vim.keymap.set('n', '<leader>ps', builtin.live_grep)
         vim.keymap.set("n", "<leader>gr", builtin.lsp_references)
+        vim.keymap.set("n", "<leader>pg", function()
+            vim.ui.input({ prompt = "Glob pattern (e.g., *.js or *config*): " }, function(glob)
+                if glob and glob ~= "" then
+                    require("telescope.builtin").live_grep({
+                        additional_args = function()
+                            return { "--glob=" .. glob }
+                        end
+                    })
+                end
+            end)
+        end, { desc = "Live grep in files matching a glob pattern" })
     end
 }

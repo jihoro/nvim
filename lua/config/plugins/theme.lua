@@ -108,6 +108,7 @@ return {
             vim.cmd [[
                 highlight StatusLine guibg=NONE
                 highlight StatusLineNC guibg=NONE
+                highlight TreesitterContextBottom gui=underline
             ]]
         end,
 
