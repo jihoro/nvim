@@ -61,3 +61,9 @@ vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.o.foldtext = ""
 vim.opt.foldcolumn = "0"
 vim.opt.fillchars:append({ fold = " " })
+
+vim.lsp.set_log_level(vim.lsp.log_levels.OFF)
+vim.api.nvim_create_autocmd('FileType', {
+    pattern = { '<filetype>' },
+    callback = function() vim.treesitter.start() end,
+})

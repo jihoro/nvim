@@ -1,48 +1,65 @@
 return {
     {
         "nvim-treesitter/nvim-treesitter",
+        lazy = false,
+        branch = 'main',
         build = ":TSUpdate",
         config = function()
-            require('nvim-treesitter.configs').setup({
-                -- A list of parser names, or "all" (the listed parsers MUST always be installed)
-                ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline", "go", "typescript", "helm", "yaml", "toml", "terraform", "dockerfile" },
-
-                -- Install parsers synchronously (only applied to `ensure_installed`)
-                sync_install = false,
-
-                auto_install = false,
-                highlight = {
-                    enable = true,
-                    -- Or use a function for more flexibility, e.g. to disable slow treesitter highlight for large files
-                    disable = function(lang, buf)
-                        local max_filesize = 100 * 1024 -- 100 KB
-                        local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
-                        if ok and stats and stats.size > max_filesize then
-                            return true
-                        end
-                    end,
-                    additional_vim_regex_highlighting = false,
-                },
-            })
+            require 'nvim-treesitter'.setup {}
+            require 'nvim-treesitter'.install { "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline", "go", "typescript", "helm", "yaml", "toml", "terraform", "dockerfile" }
+            -- require('nvim-treesitter.configs').setup({
+            --     -- A list of parser names, or "all" (the listed parsers MUST always be installed)
+            --     ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline", "go", "typescript", "helm", "yaml", "toml", "terraform", "dockerfile" },
+            --
+            --     -- Install parsers synchronously (only applied to `ensure_installed`)
+            --     sync_install = false,
+            --
+            --     auto_install = false,
+            --     highlight = {
+            --         enable = true,
+            --         -- Or use a function for more flexibility, e.g. to disable slow treesitter highlight for large files
+            --         disable = function(lang, buf)
+            --             local max_filesize = 100 * 1024 -- 100 KB
+            --             local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+            --             if ok and stats and stats.size > max_filesize then
+            --                 return true
+            --             end
+            --         end,
+            --         additional_vim_regex_highlighting = false,
+            --     },
+            -- })
         end,
     },
     {
         "nvim-treesitter/nvim-treesitter-textobjects",
-        dependencies = { "nvim-treesitter/nvim-treesitter" },
+        branch = 'main',
         config = function()
-            require 'nvim-treesitter.configs'.setup {
-                textobjects = {
-                    select = {
-                        enable = true,
-                        lookahead = true,
-                        keymaps = {
-                            ["ar"] = "@parameter.outer", -- around parameter
-                            ["ir"] = "@parameter.inner", -- inside parameter
-                        },
-                        include_surrounding_whitespace = true,
-                    },
-                },
-            }
+            require("nvim-treesitter-textobjects").setup {}
+            vim.keymap.set({ "x", "o" }, "ar", function()
+                require "nvim-treesitter-textobjects.select".select_textobject("@parameter.outer", "textobjects")
+            end)
+            vim.keymap.set({ "x", "o" }, "ir", function()
+                require "nvim-treesitter-textobjects.select".select_textobject("@parameter.inner", "textobjects")
+            end)
+            vim.keymap.set({ "x", "o" }, "af", function()
+                require "nvim-treesitter-textobjects.select".select_textobject("@function.outer", "textobjects")
+            end)
+            vim.keymap.set({ "x", "o" }, "if", function()
+                require "nvim-treesitter-textobjects.select".select_textobject("@function.inner", "textobjects")
+            end)
+            -- require 'nvim-treesitter.configs'.setup {
+            --     textobjects = {
+            --         select = {
+            --             enable = true,
+            --             lookahead = true,
+            --             keymaps = {
+            --                 ["ar"] = "@parameter.outer", -- around parameter
+            --                 ["ir"] = "@parameter.inner", -- inside parameter
+            --             },
+            --             include_surrounding_whitespace = true,
+            --         },
+            --     },
+            -- }
         end
     },
     {
