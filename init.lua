@@ -64,6 +64,6 @@ vim.opt.fillchars:append({ fold = " " })
 
 vim.lsp.set_log_level(vim.lsp.log_levels.OFF)
 vim.api.nvim_create_autocmd('FileType', {
-    pattern = { '<filetype>' },
-    callback = function() vim.treesitter.start() end,
+    pattern = '*',
+    callback = function() pcall(vim.treesitter.start) end,
 })
