@@ -29,6 +29,10 @@ return {
                 capabilities = capabilities
             })
 
+            vim.lsp.enable('pylsp')
+            vim.lsp.config('pylsp', {
+                capabilities = capabilities
+            })
             -- vim.lsp.config('tsserver', {
             --   capabilities = capabilities
             -- })

@@ -6,7 +6,7 @@ return {
         build = ":TSUpdate",
         config = function()
             require 'nvim-treesitter'.setup {}
-            require 'nvim-treesitter'.install { "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline", "go", "typescript", "helm", "yaml", "toml", "terraform", "dockerfile" }
+            require 'nvim-treesitter'.install { "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline", "go", "typescript", "helm", "yaml", "toml", "terraform", "dockerfile", "python" }
             -- require('nvim-treesitter.configs').setup({
             --     -- A list of parser names, or "all" (the listed parsers MUST always be installed)
             --     ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline", "go", "typescript", "helm", "yaml", "toml", "terraform", "dockerfile" },
