@@ -24,6 +24,11 @@ return {
                 capabilities = capabilities
             })
 
+            vim.lsp.enable('rust_analyzer')
+            vim.lsp.config('rust_analyzer', {
+                capabilities = capabilities
+            })
+
             vim.lsp.enable('gopls')
             vim.lsp.config('gopls', {
                 capabilities = capabilities
