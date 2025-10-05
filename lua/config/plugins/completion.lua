@@ -67,10 +67,10 @@ return {
             -- },
         },
         sources = {
-            default = { 'lsp', 'path', 'snippets', 'buffer', 'codeium' },
-            providers = {
-                codeium = { name = 'Codeium', module = 'codeium.blink', async = true },
-            },
+            default = { 'lsp', 'path', 'snippets', 'buffer' },
+            -- providers = {
+            --     codeium = { name = 'Codeium', module = 'codeium.blink', async = true },
+            -- },
         },
         -- sources = {
         --     default = { "lsp", "path", "snippets", "buffer", "copilot" },
