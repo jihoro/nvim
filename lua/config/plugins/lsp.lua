@@ -49,12 +49,29 @@ return {
 
             vim.lsp.enable('yamlls')
             vim.lsp.config('yamlls', {
-                capabilities = capabilities
+                capabilities = capabilities,
+                settings = {
+                    yaml = {
+                        format = {
+                            enable = false,
+                            singleQuote = true,
+                            bracketSpacing = false,
+                        },
+                        editor = {
+                            tabSize = 2,
+                            insertSpaces = true,
+                            formatOnType = true
+                        },
+                    },
+                },
             })
 
             vim.lsp.enable('terraformls')
             vim.lsp.config('terraformls', {
-                capabilities = capabilities
+                capabilities = capabilities,
+                on_attach = function(client)
+                    client.server_capabilities.documentFormattingProvider = false
+                end
             })
 
             vim.lsp.enable('yls')

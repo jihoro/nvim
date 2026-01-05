@@ -64,38 +64,23 @@ return {
                 -- 29c1aa
 
                 palette = {
-                    -- base00 = "#307040", -- Background
-                    -- base01 = "#307040",
-                    -- base02 = "#303340",
-                    -- base03 = "#506477",
-                    -- base04 = "#7390AA",
-                    -- base05 = "#E4F0FB", -- Default text
-                    -- base06 = "#7390AA",
-                    -- base07 = "#E4F0FB", -- Light foreground
-                    -- base08 = "#91B4D5", -- Red
-                    -- base09 = "#7390AA", -- Orange
-                    -- base0A = "#29c1aa", -- Yellow
-                    -- base0B = "#29c1aa", -- Green
-                    -- base0C = "#E4F0FB", -- Cyan
-                    -- base0D = "#91B4D5", -- Blue
-                    -- base0E = "#7390AA", -- Purple
-                    -- base0F = "#506477", -- Brown/Extra
-                    base00 = "#000000", -- Background
-                    base01 = "#000000",
-                    base02 = "#303340",
-                    base03 = "#506477",
-                    base04 = "#7390AA",
-                    base05 = "#E4F0FB", -- Default text
-                    base06 = "#7390AA",
-                    base07 = "#E4F0FB", -- Light foreground
-                    base08 = "#91B4D5", -- Red
-                    base09 = "#7390AA", -- Orange
-                    base0A = "#91B4D5", -- Yellow
-                    base0B = "#5DE4C7", -- Green
-                    base0C = "#91B4D5", -- Cyan
-                    base0D = "#29c1aa", -- Blue
-                    base0E = "#7390AA", -- Purple
-                    base0F = "#506477", -- Brown/Extra
+                    base00 = "#0c0e13", -- Background (Ghostty background)
+                    -- base01 = "#161a22", -- Lighter Background (palette 0)
+                    base01 = "#0c0e13", -- Lighter Background (palette 0)
+                    base02 = "#4d3028", -- Selection Background
+                    base03 = "#606060", -- Comments (palette 8)
+                    base04 = "#8a8a8a", -- Dark Foreground (status bars)
+                    base05 = "#eeeeee", -- Default Foreground
+                    base06 = "#eeeeee", -- Light Foreground
+                    base07 = "#ffffff", -- Lightest Foreground (palette 15)
+                    base08 = "#e06c75", -- Variables, Diff Deleted (red)
+                    base09 = "#EE7948", -- Constants, Numbers (orange)
+                    base0A = "#e5c07b", -- Classes, Search (yellow)
+                    base0B = "#6ba1e6", -- Strings (blue)
+                    base0C = "#56b6c2", -- Regex, Escape (cyan)
+                    base0D = "#6ba1e6", -- Functions (blue)
+                    base0E = "#EC5B2B", -- Keywords (Cloudflare orange)
+                    base0F = "#f5a07a", -- Deprecated (bright orange)
                 },
                 use_cterm = true,       -- Optional: enable for better terminal color support
             })

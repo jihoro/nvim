@@ -61,8 +61,18 @@ vim.o.foldtext = ""
 vim.opt.foldcolumn = "0"
 vim.opt.fillchars:append({ fold = " " })
 
-vim.lsp.set_log_level(vim.lsp.log_levels.OFF)
+-- vim.lsp.set_log_level(vim.lsp.log_levels.OFF)
 vim.api.nvim_create_autocmd('FileType', {
     pattern = '*',
     callback = function() pcall(vim.treesitter.start) end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "yaml", "yml" },
+    callback = function()
+        vim.opt_local.expandtab = true
+        vim.opt_local.shiftwidth = 2
+        vim.opt_local.tabstop = 2
+        vim.opt_local.softtabstop = 2
+    end,
 })
