@@ -78,7 +78,7 @@ return {
                     base0A = "#e5c07b", -- Classes, Search (yellow)
                     base0B = "#6ba1e6", -- Strings (blue)
                     base0C = "#56b6c2", -- Regex, Escape (cyan)
-                    base0D = "#6ba1e6", -- Functions (blue)
+                    base0D = "#e06c75", -- Functions (red)
                     base0E = "#EC5B2B", -- Keywords (Cloudflare orange)
                     base0F = "#f5a07a", -- Deprecated (bright orange)
                 },
